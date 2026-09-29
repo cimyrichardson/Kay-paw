@@ -1,22 +1,30 @@
 <!DOCTYPE html> <!-- Indique que le document utilise HTML5. -->
 <html lang="fr"> <!-- Définit le français comme langue principale. -->
+
 <head> <!-- Regroupe les informations générales de la page. -->
     <meta charset="UTF-8"> <!-- Permet d’afficher correctement les accents. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adapte la page à la largeur de l’écran. -->
-    <meta name="description" content="Chèche Kay : recherchez un logement selon votre budget, votre zone et vos besoins."> <!-- Décrit le site pour les moteurs de recherche. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Adapte la page à la largeur de l’écran. -->
+    <meta name="description"
+        content="Chèche Kay : recherchez un logement selon votre budget, votre zone et vos besoins.">
+    <!-- Décrit le site pour les moteurs de recherche. -->
     <title>Chèche Kay — Trouver un logement</title> <!-- Définit le titre affiché dans l’onglet. -->
     <link rel="icon" type="image/jpeg" href="image/img1.jpg"> <!-- Utilise cette image comme icône de l’onglet. -->
     <link rel="stylesheet" href="style/style.css"> <!-- Relie la page au fichier CSS. -->
-    <script src="script/script.js" defer></script> <!-- Charge le JavaScript et attend que le HTML soit analysé avant de l’exécuter. -->
+    <script src="script/script.js" defer></script>
+    <!-- Charge le JavaScript et attend que le HTML soit analysé avant de l’exécuter. -->
 </head> <!-- Termine les informations générales. -->
+
 <body> <!-- Contient les éléments visibles de la page. -->
 
     <header> <!-- Présente le site et sa navigation. -->
-        <h1><img src="image/img1.jpg" alt=""> Chèche Kay</h1> <!-- Affiche le nom du site avec son logo ; le texte voisin suffit à l’identifier. -->
+        <h1><img src="image/img1.jpg" alt=""> Chèche Kay</h1>
+        <!-- Affiche le nom du site avec son logo ; le texte voisin suffit à l’identifier. -->
         <p>Trouvez rapidement un logement adapté à votre budget.</p> <!-- Présente l’objectif du site en français. -->
         <p lang="ht">Jwenn yon kay ki adapte ak bous ou.</p> <!-- Présente l’objectif du site en créole. -->
 
-        <nav aria-label="Navigation principale"> <!-- Regroupe les liens de navigation et leur donne un nom accessible. -->
+        <nav aria-label="Navigation principale">
+            <!-- Regroupe les liens de navigation et leur donne un nom accessible. -->
             <ul> <!-- Crée la liste des liens. -->
                 <li><a href="#recherche">Recherche</a></li> <!-- Dirige vers le formulaire de recherche. -->
                 <li><a href="#resultats">Logements</a></li> <!-- Dirige vers les annonces. -->
@@ -28,43 +36,55 @@
 
         <fieldset> <!-- Regroupe les options de langue. -->
             <legend>Langue</legend> <!-- Donne un titre au groupe. -->
-            <label><input type="radio" id="langue-ht" name="langue" value="ht"> Kreyòl</label> <!-- Prépare le choix du créole pour le futur JavaScript. -->
-            <label><input type="radio" id="langue-fr" name="langue" value="fr" checked> Français</label> <!-- Sélectionne le français par défaut. -->
+            <label><input type="radio" id="langue-ht" name="langue" value="ht"> Kreyòl</label>
+            <!-- Prépare le choix du créole pour le futur JavaScript. -->
+            <label><input type="radio" id="langue-fr" name="langue" value="fr" checked> Français</label>
+            <!-- Sélectionne le français par défaut. -->
         </fieldset> <!-- Termine les options de langue. -->
 
         <fieldset> <!-- Regroupe les devises d’affichage. -->
             <legend>Devise d’affichage</legend> <!-- Précise le rôle de ces options. -->
-            <label><input type="radio" id="devise-htg" name="devise-affichage" value="HTG" checked> HTG</label> <!-- Sélectionne la gourde par défaut. -->
-            <label><input type="radio" id="devise-usd" name="devise-affichage" value="USD"> USD</label> <!-- Prépare l’affichage en dollars avec JavaScript. -->
+            <label><input type="radio" id="devise-htg" name="devise-affichage" value="HTG" checked> HTG</label>
+            <!-- Sélectionne la gourde par défaut. -->
+            <label><input type="radio" id="devise-usd" name="devise-affichage" value="USD"> USD</label>
+            <!-- Prépare l’affichage en dollars avec JavaScript. -->
         </fieldset> <!-- Termine les options de devise. -->
     </header> <!-- Termine l’en-tête du site. -->
 
     <main> <!-- Regroupe le contenu principal. -->
 
-        <section id="recherche" aria-labelledby="titre-recherche"> <!-- Identifie la section de recherche et l’associe à son titre. -->
+        <section id="recherche" aria-labelledby="titre-recherche">
+            <!-- Identifie la section de recherche et l’associe à son titre. -->
             <h2 id="titre-recherche">Ma recherche</h2> <!-- Affiche le titre du formulaire. -->
 
-            <form id="form-recherche" action="#resultats" method="get"> <!-- Identifie le formulaire que JavaScript utilisera pour filtrer les annonces. -->
+            <form id="form-recherche" action="#resultats" method="get">
+                <!-- Identifie le formulaire que JavaScript utilisera pour filtrer les annonces. -->
                 <p> <!-- Regroupe le libellé et le champ du budget. -->
-                    <label for="budget">Mon budget mensuel en HTG</label><br> <!-- Associe le texte au champ budget et passe à la ligne. -->
-                    <input type="number" id="budget" name="budget" min="0" step="0.01" placeholder="Ex. : 8000" aria-describedby="aide-budget"> <!-- Accepte un budget positif ou nul, avec des centimes. -->
+                    <label for="budget">Mon budget mensuel en HTG</label><br>
+                    <!-- Associe le texte au champ budget et passe à la ligne. -->
+                    <input type="number" id="budget" name="budget" min="0" step="0.01" placeholder="Ex. : 8000"
+                        aria-describedby="aide-budget"> <!-- Accepte un budget positif ou nul, avec des centimes. -->
                 </p> <!-- Termine le groupe du budget. -->
-                <p id="aide-budget">Laissez ce champ vide pour rechercher sans limite de budget.</p> <!-- Explique le comportement à programmer pour un budget vide. -->
+                <p id="aide-budget">Laissez ce champ vide pour rechercher sans limite de budget.</p>
+                <!-- Explique le comportement à programmer pour un budget vide. -->
 
                 <p> <!-- Regroupe les éléments du nombre de personnes. -->
                     <label for="personnes">Personnes à loger</label><br> <!-- Décrit le champ associé. -->
-                    <input type="number" id="personnes" name="personnes" min="1" max="15" step="1" value="1" required> <!-- Demande un nombre entier entre 1 et 15. -->
+                    <input type="number" id="personnes" name="personnes" min="1" max="15" step="1" value="1" required>
+                    <!-- Demande un nombre entier entre 1 et 15. -->
                 </p> <!-- Termine le groupe du nombre de personnes. -->
 
                 <p> <!-- Regroupe les éléments du choix de zone. -->
                     <label for="zone">Zone</label><br> <!-- Décrit la liste des zones. -->
                     <select id="zone" name="zone"> <!-- Crée une liste déroulante. -->
-                        <option value="">Toutes les zones</option> <!-- Une valeur vide signifie qu’aucune zone précise n’est imposée. -->
+                        <option value="">Toutes les zones</option>
+                        <!-- Une valeur vide signifie qu’aucune zone précise n’est imposée. -->
                         <option value="Delmas">Delmas</option> <!-- Propose Delmas. -->
                         <option value="Pétion-Ville">Pétion-Ville</option> <!-- Propose Pétion-Ville. -->
                         <option value="Tabarre">Tabarre</option> <!-- Propose Tabarre. -->
                         <option value="Carrefour">Carrefour</option> <!-- Propose Carrefour. -->
-                        <option value="Croix-des-Bouquets">Croix-des-Bouquets</option> <!-- Propose Croix-des-Bouquets. -->
+                        <option value="Croix-des-Bouquets">Croix-des-Bouquets</option>
+                        <!-- Propose Croix-des-Bouquets. -->
                         <option value="Cap-Haïtien">Cap-Haïtien</option> <!-- Propose Cap-Haïtien. -->
                         <option value="Les Cayes">Les Cayes</option> <!-- Propose Les Cayes. -->
                         <option value="Hinche">Hinche</option> <!-- Propose Hinche. -->
@@ -73,16 +93,22 @@
 
                 <fieldset> <!-- Regroupe les types de logement recherchés. -->
                     <legend>Type de logement</legend> <!-- Donne un titre au groupe. -->
-                    <label><input type="checkbox" id="type-chambre" name="type" value="chambre"> Chambre</label> <!-- Permet d’inclure les chambres. -->
-                    <label><input type="checkbox" id="type-studio" name="type" value="studio"> Studio</label> <!-- Permet d’inclure les studios. -->
-                    <label><input type="checkbox" id="type-maison" name="type" value="maison"> Maison</label> <!-- Permet d’inclure les maisons. -->
-                    <label><input type="checkbox" id="type-hebergement" name="type" value="hebergement"> Hébergement temporaire</label> <!-- Permet d’inclure les hébergements temporaires. -->
+                    <label><input type="checkbox" id="type-chambre" name="type" value="chambre"> Chambre</label>
+                    <!-- Permet d’inclure les chambres. -->
+                    <label><input type="checkbox" id="type-studio" name="type" value="studio"> Studio</label>
+                    <!-- Permet d’inclure les studios. -->
+                    <label><input type="checkbox" id="type-maison" name="type" value="maison"> Maison</label>
+                    <!-- Permet d’inclure les maisons. -->
+                    <label><input type="checkbox" id="type-hebergement" name="type" value="hebergement"> Hébergement
+                        temporaire</label> <!-- Permet d’inclure les hébergements temporaires. -->
                 </fieldset> <!-- Termine les types de logement. -->
 
                 <details> <!-- Crée une zone que l’utilisateur peut ouvrir ou fermer sans JavaScript. -->
                     <summary>Plus d’options</summary> <!-- Affiche le texte sur lequel cliquer pour ouvrir la zone. -->
-                    <p><label><input type="checkbox" id="filtre-eau" name="eau"> Eau sur place</label></p> <!-- Prépare le filtre sur la disponibilité de l’eau. -->
-                    <p><label><input type="checkbox" id="filtre-electricite" name="electricite"> Électricité : réseau ou solaire</label></p> <!-- Prépare le filtre sur l’électricité. -->
+                    <p><label><input type="checkbox" id="filtre-eau" name="eau"> Eau sur place</label></p>
+                    <!-- Prépare le filtre sur la disponibilité de l’eau. -->
+                    <p><label><input type="checkbox" id="filtre-electricite" name="electricite"> Électricité : réseau ou
+                            solaire</label></p> <!-- Prépare le filtre sur l’électricité. -->
 
                     <p> <!-- Regroupe les éléments de la caution maximale. -->
                         <label for="caution-max">Caution maximale</label><br> <!-- Décrit la liste des cautions. -->
@@ -94,51 +120,73 @@
                         </select> <!-- Termine la liste des cautions. -->
                     </p> <!-- Termine le groupe de la caution. -->
 
-                    <p><label><input type="checkbox" id="budget-souple" name="au-dessus"> Inclure les logements jusqu’à 15 % au-dessus du budget</label></p> <!-- Prépare une marge facultative sur le budget. -->
+                    <p><label><input type="checkbox" id="budget-souple" name="au-dessus"> Inclure les logements jusqu’à
+                            15 % au-dessus du budget</label></p> <!-- Prépare une marge facultative sur le budget. -->
 
                     <p> <!-- Regroupe les éléments du taux de conversion. -->
                         <label for="taux">Valeur de 1 USD en HTG</label><br> <!-- Indique le sens de la conversion. -->
-                        <input type="number" id="taux" name="taux" min="0.01" step="0.01" value="130" required aria-describedby="aide-taux"> <!-- Fournit un taux positif modifiable. -->
+                        <input type="number" id="taux" name="taux" min="0.01" step="0.01" value="130" required
+                            aria-describedby="aide-taux"> <!-- Fournit un taux positif modifiable. -->
                     </p> <!-- Termine le groupe du taux. -->
-                    <p id="aide-taux">Taux d’exemple pour le prototype, à modifier manuellement.</p> <!-- Précise que le taux n’est pas actualisé automatiquement. -->
+                    <p id="aide-taux">Taux d’exemple pour le prototype, à modifier manuellement.</p>
+                    <!-- Précise que le taux n’est pas actualisé automatiquement. -->
                 </details> <!-- Termine les options supplémentaires. -->
 
                 <p> <!-- Regroupe les boutons de recherche. -->
-                    <button type="submit" id="bouton-chercher">Chercher</button> <!-- Déclenche la soumission du formulaire. -->
-                    <button type="button" id="bouton-urgence">Urgence : hébergement temporaire</button> <!-- Prépare un filtre rapide qui nécessitera JavaScript. -->
+                    <button type="submit" id="bouton-chercher">Chercher</button>
+                    <!-- Déclenche la soumission du formulaire. -->
+                    <button type="button" id="bouton-urgence">Urgence : hébergement temporaire</button>
+                    <!-- Prépare un filtre rapide qui nécessitera JavaScript. -->
                 </p> <!-- Termine le groupe des boutons. -->
             </form> <!-- Termine le formulaire de recherche. -->
         </section> <!-- Termine la section de recherche. -->
 
         <section id="resultats" aria-labelledby="titre-resultats"> <!-- Regroupe les résultats de la recherche. -->
-            <h2 id="titre-resultats" aria-live="polite">3 logements</h2> <!-- Permet d’annoncer les changements du compteur aux lecteurs d’écran. -->
-            <p>Ces annonces sont des exemples pour le projet. Les prix, les disponibilités et les délais de vérification sont fictifs.</p> <!-- Identifie les informations de démonstration. -->
+            <h2 id="titre-resultats" aria-live="polite">3 logements</h2>
+            <!-- Permet d’annoncer les changements du compteur aux lecteurs d’écran. -->
+            <p>Ces annonces sont des exemples pour le projet. Les prix, les disponibilités et les délais de vérification
+                sont fictifs.</p> <!-- Identifie les informations de démonstration. -->
 
             <p> <!-- Regroupe les commandes des résultats. -->
                 <label for="tri">Trier par</label> <!-- Décrit la liste de tri. -->
                 <select id="tri" name="tri"> <!-- Prépare le choix du classement. -->
-                    <option value="adaptes">Les mieux adaptés</option> <!-- Prévoit un classement selon les critères de recherche. -->
-                    <option value="prix">Prix croissant</option> <!-- Prévoit un classement du moins cher au plus cher. -->
-                    <option value="recents">Vérifiés récemment</option> <!-- Prévoit un classement selon la vérification. -->
+                    <option value="adaptes">Les mieux adaptés</option>
+                    <!-- Prévoit un classement selon les critères de recherche. -->
+                    <option value="prix">Prix croissant</option>
+                    <!-- Prévoit un classement du moins cher au plus cher. -->
+                    <option value="recents">Vérifiés récemment</option>
+                    <!-- Prévoit un classement selon la vérification. -->
                 </select> <!-- Termine la liste de tri. -->
-                <button type="button" id="bouton-mes-favoris" aria-pressed="false">Mes favoris (0)</button> <!-- Prépare l’affichage des favoris et indique que le filtre est désactivé. -->
-                <button type="button" id="bouton-imprimer">Imprimer ma sélection</button> <!-- Prépare la commande d’impression. -->
+                <button type="button" id="bouton-mes-favoris" aria-pressed="false">Mes favoris (0)</button>
+                <!-- Prépare l’affichage des favoris et indique que le filtre est désactivé. -->
+                <button type="button" id="bouton-imprimer">Imprimer ma sélection</button>
+                <!-- Prépare la commande d’impression. -->
             </p> <!-- Termine les commandes des résultats. -->
 
             <ul id="liste-logements"> <!-- Contient les annonces que JavaScript pourra filtrer. -->
 
-                <li id="logement-1" class="logement" data-prix="6000" data-personnes="2" data-zone="Delmas" data-type="chambre" data-caution="2" data-eau="oui" data-electricite="oui" data-jours-verification="6"> <!-- Stocke les critères du premier logement ; le prix est mensuel et exprimé en HTG. -->
-                    <article aria-labelledby="l1-titre"> <!-- Présente une annonce indépendante, associée à son titre. -->
+                <li id="logement-1" class="logement" data-prix="6000" data-personnes="2" data-zone="Delmas"
+                    data-type="chambre" data-caution="2" data-eau="oui" data-electricite="oui"
+                    data-jours-verification="6">
+                    <!-- Stocke les critères du premier logement ; le prix est mensuel et exprimé en HTG. -->
+                    <article aria-labelledby="l1-titre">
+                        <!-- Présente une annonce indépendante, associée à son titre. -->
                         <header> <!-- Regroupe le titre, la localisation et le bouton favori. -->
                             <h3 id="l1-titre">Chambre indépendante</h3> <!-- Nomme le premier logement. -->
                             <p>Delmas 33, Delmas</p> <!-- Indique sa localisation. -->
-                            <button type="button" class="bouton-favori" data-logement="1" aria-pressed="false" aria-label="Ajouter la chambre indépendante aux favoris">Favori</button> <!-- Identifie le logement à ajouter aux favoris. -->
+                            <button type="button" class="bouton-favori" data-logement="1" aria-pressed="false"
+                                aria-label="Ajouter la chambre indépendante aux favoris">Favori</button>
+                            <!-- Identifie le logement à ajouter aux favoris. -->
                         </header> <!-- Termine l’en-tête de l’annonce. -->
 
-                        <p><strong>Exemple : vérifié il y a 6 jours</strong></p> <!-- Affiche le délai de vérification utilisé dans la démonstration. -->
-                        <p><strong class="montant" data-htg="6000">6 000 HTG</strong> par mois</p> <!-- Affiche le loyer et conserve son montant initial pour la conversion. -->
-                        <p class="statut-budget" hidden></p> <!-- Réserve un emplacement masqué pour la comparaison avec le budget. -->
-                        <p>À prévoir à l’entrée, loyer et caution compris : <strong class="montant" data-htg="18000">18 000 HTG</strong></p> <!-- Affiche un mois de loyer et deux mois de caution. -->
+                        <p><strong>Exemple : vérifié il y a 6 jours</strong></p>
+                        <!-- Affiche le délai de vérification utilisé dans la démonstration. -->
+                        <p><strong class="montant" data-htg="6000">6 000 HTG</strong> par mois</p>
+                        <!-- Affiche le loyer et conserve son montant initial pour la conversion. -->
+                        <p class="statut-budget" hidden></p>
+                        <!-- Réserve un emplacement masqué pour la comparaison avec le budget. -->
+                        <p>À prévoir à l’entrée, loyer et caution compris : <strong class="montant" data-htg="18000">18
+                                000 HTG</strong></p> <!-- Affiche un mois de loyer et deux mois de caution. -->
 
                         <ul> <!-- Liste les caractéristiques du logement. -->
                             <li>Chambre</li> <!-- Indique le type de logement. -->
@@ -149,14 +197,20 @@
                         </ul> <!-- Termine les caractéristiques. -->
 
                         <p> <!-- Regroupe les liens de contact et de localisation. -->
-                            <a href="tel:+50944643903">Appeler</a> <!-- Utilise le numéro présent dans ton HTML pour ouvrir l’application d’appel. -->
-                            <a href="https://wa.me/50944643903?text=Bonjour%2C%20je%20vous%20contacte%20pour%20la%20chambre%20%C3%A0%20Delmas.">WhatsApp</a> <!-- Ouvre une conversation avec un message prérempli, sans l’envoyer automatiquement. -->
-                            <a href="https://www.openstreetmap.org/search?query=Delmas%2033%2C%20Haiti" target="_blank" rel="noopener">Voir sur la carte</a> <!-- Ouvre une recherche du quartier dans un nouvel onglet. -->
+                            <a href="tel:+50944643903">Appeler</a>
+                            <!-- Utilise le numéro présent dans ton HTML pour ouvrir l’application d’appel. -->
+                            <a
+                                href="https://wa.me/50944643903?text=Bonjour%2C%20je%20vous%20contacte%20pour%20la%20chambre%20%C3%A0%20Delmas.">WhatsApp</a>
+                            <!-- Ouvre une conversation avec un message prérempli, sans l’envoyer automatiquement. -->
+                            <a href="https://www.openstreetmap.org/search?query=Delmas%2033%2C%20Haiti" target="_blank"
+                                rel="noopener">Voir sur la carte</a>
+                            <!-- Ouvre une recherche du quartier dans un nouvel onglet. -->
                         </p> <!-- Termine les liens de l’annonce. -->
 
                         <details> <!-- Permet de consulter les informations supplémentaires. -->
                             <summary>Détails</summary> <!-- Affiche la commande d’ouverture des détails. -->
-                            <p>Chambre carrelée avec cour partagée et citerne. Portail fermé la nuit.</p> <!-- Décrit le logement. -->
+                            <p>Chambre carrelée avec cour partagée et citerne. Portail fermé la nuit.</p>
+                            <!-- Décrit le logement. -->
                             <dl> <!-- Associe chaque caractéristique à sa valeur. -->
                                 <dt>Caution</dt> <!-- Nomme la caractéristique. -->
                                 <dd>2 mois de loyer</dd> <!-- Donne la valeur de la caution. -->
@@ -169,19 +223,29 @@
                     </article> <!-- Termine la première annonce. -->
                 </li> <!-- Termine le premier élément de la liste. -->
 
-                <li id="logement-2" class="logement" data-prix="6500" data-personnes="5" data-zone="Delmas" data-type="hebergement" data-caution="0" data-eau="oui" data-electricite="oui" data-jours-verification="3"> <!-- Utilise un équivalent mensuel de 6 500 HTG pour comparer les budgets. -->
+                <li id="logement-2" class="logement" data-prix="6500" data-personnes="5" data-zone="Delmas"
+                    data-type="hebergement" data-caution="0" data-eau="oui" data-electricite="oui"
+                    data-jours-verification="3">
+                    <!-- Utilise un équivalent mensuel de 6 500 HTG pour comparer les budgets. -->
                     <article aria-labelledby="l2-titre"> <!-- Présente la deuxième annonce. -->
                         <header> <!-- Regroupe les informations principales. -->
                             <h3 id="l2-titre">Accueil temporaire pour une famille</h3> <!-- Nomme le logement. -->
                             <p>Delmas, salle communautaire</p> <!-- Indique sa localisation. -->
-                            <button type="button" class="bouton-favori" data-logement="2" aria-pressed="false" aria-label="Ajouter l’accueil temporaire aux favoris">Favori</button> <!-- Prépare l’ajout de cette annonce aux favoris. -->
+                            <button type="button" class="bouton-favori" data-logement="2" aria-pressed="false"
+                                aria-label="Ajouter l’accueil temporaire aux favoris">Favori</button>
+                            <!-- Prépare l’ajout de cette annonce aux favoris. -->
                         </header> <!-- Termine l’en-tête de l’annonce. -->
 
-                        <p><strong>Exemple : vérifié il y a 3 jours</strong></p> <!-- Affiche un délai fictif de vérification. -->
-                        <p><strong class="montant" data-htg="1500">1 500 HTG</strong> par semaine</p> <!-- Affiche le tarif hebdomadaire. -->
-                        <p>Soit environ <span class="montant" data-htg="6500">6 500 HTG</span> par mois.</p> <!-- Donne l’équivalent mensuel calculé sur 52 semaines réparties sur 12 mois. -->
+                        <p><strong>Exemple : vérifié il y a 3 jours</strong></p>
+                        <!-- Affiche un délai fictif de vérification. -->
+                        <p><strong class="montant" data-htg="1500">1 500 HTG</strong> par semaine</p>
+                        <!-- Affiche le tarif hebdomadaire. -->
+                        <p>Soit environ <span class="montant" data-htg="6500">6 500 HTG</span> par mois.</p>
+                        <!-- Donne l’équivalent mensuel calculé sur 52 semaines réparties sur 12 mois. -->
                         <p class="statut-budget" hidden></p> <!-- Réserve la comparaison avec le budget saisi. -->
-                        <p>À prévoir à l’entrée, pour la première semaine sans caution : <strong class="montant" data-htg="1500">1 500 HTG</strong></p> <!-- Précise ce que couvre le paiement initial. -->
+                        <p>À prévoir à l’entrée, pour la première semaine sans caution : <strong class="montant"
+                                data-htg="1500">1 500 HTG</strong></p>
+                        <!-- Précise ce que couvre le paiement initial. -->
 
                         <ul> <!-- Liste les caractéristiques de l’hébergement. -->
                             <li>Hébergement temporaire</li> <!-- Indique le type. -->
@@ -191,12 +255,16 @@
                             <li>Électricité solaire</li> <!-- Indique la source d’électricité. -->
                         </ul> <!-- Termine les caractéristiques. -->
 
-                        <p>Contact à renseigner pour cette annonce de démonstration.</p> <!-- Évite de proposer un appel vers le faux numéro de l’exemple initial. -->
-                        <p><a href="https://www.openstreetmap.org/search?query=Delmas%2C%20Haiti" target="_blank" rel="noopener">Voir la zone sur la carte</a></p> <!-- Recherche la zone sans prétendre afficher une adresse exacte. -->
+                        <p>Contact à renseigner pour cette annonce de démonstration.</p>
+                        <!-- Évite de proposer un appel vers le faux numéro de l’exemple initial. -->
+                        <p><a href="https://www.openstreetmap.org/search?query=Delmas%2C%20Haiti" target="_blank"
+                                rel="noopener">Voir la zone sur la carte</a></p>
+                        <!-- Recherche la zone sans prétendre afficher une adresse exacte. -->
 
                         <details> <!-- Regroupe les informations supplémentaires. -->
                             <summary>Détails</summary> <!-- Permet d’ouvrir ou de fermer les détails. -->
-                            <p>Espace géré par un relais communautaire. Repas non inclus.</p> <!-- Décrit les conditions de l’hébergement. -->
+                            <p>Espace géré par un relais communautaire. Repas non inclus.</p>
+                            <!-- Décrit les conditions de l’hébergement. -->
                             <dl> <!-- Présente les caractéristiques détaillées. -->
                                 <dt>Caution</dt> <!-- Introduit la caution. -->
                                 <dd>Aucune</dd> <!-- Indique qu’aucune caution n’est demandée. -->
@@ -209,18 +277,26 @@
                     </article> <!-- Termine la deuxième annonce. -->
                 </li> <!-- Termine le deuxième élément de la liste. -->
 
-                <li id="logement-3" class="logement" data-prix="8500" data-personnes="3" data-zone="Delmas" data-type="studio" data-caution="2" data-eau="oui" data-electricite="oui" data-jours-verification="45"> <!-- Stocke les critères du studio pour les futurs filtres. -->
+                <li id="logement-3" class="logement" data-prix="8500" data-personnes="3" data-zone="Delmas"
+                    data-type="studio" data-caution="2" data-eau="oui" data-electricite="oui"
+                    data-jours-verification="45"> <!-- Stocke les critères du studio pour les futurs filtres. -->
                     <article aria-labelledby="l3-titre"> <!-- Présente la troisième annonce. -->
                         <header> <!-- Regroupe ses informations principales. -->
                             <h3 id="l3-titre">Studio avec galerie</h3> <!-- Nomme le logement. -->
                             <p>Delmas 60, Delmas</p> <!-- Indique sa localisation. -->
-                            <button type="button" class="bouton-favori" data-logement="3" aria-pressed="false" aria-label="Ajouter le studio avec galerie aux favoris">Favori</button> <!-- Prépare l’ajout du studio aux favoris. -->
+                            <button type="button" class="bouton-favori" data-logement="3" aria-pressed="false"
+                                aria-label="Ajouter le studio avec galerie aux favoris">Favori</button>
+                            <!-- Prépare l’ajout du studio aux favoris. -->
                         </header> <!-- Termine l’en-tête de l’annonce. -->
 
-                        <p><strong>Exemple : à reconfirmer, vérifié il y a 45 jours</strong></p> <!-- Illustre une annonce dont la vérification est ancienne. -->
-                        <p><strong class="montant" data-htg="8500">8 500 HTG</strong> par mois</p> <!-- Affiche le loyer mensuel. -->
-                        <p class="statut-budget" hidden></p> <!-- Réserve le résultat de la comparaison avec le budget. -->
-                        <p>À prévoir à l’entrée, loyer et caution compris : <strong class="montant" data-htg="25500">25 500 HTG</strong></p> <!-- Additionne un mois de loyer et deux mois de caution. -->
+                        <p><strong>Exemple : à reconfirmer, vérifié il y a 45 jours</strong></p>
+                        <!-- Illustre une annonce dont la vérification est ancienne. -->
+                        <p><strong class="montant" data-htg="8500">8 500 HTG</strong> par mois</p>
+                        <!-- Affiche le loyer mensuel. -->
+                        <p class="statut-budget" hidden></p>
+                        <!-- Réserve le résultat de la comparaison avec le budget. -->
+                        <p>À prévoir à l’entrée, loyer et caution compris : <strong class="montant" data-htg="25500">25
+                                500 HTG</strong></p> <!-- Additionne un mois de loyer et deux mois de caution. -->
 
                         <ul> <!-- Liste les caractéristiques du studio. -->
                             <li>Studio</li> <!-- Indique le type de logement. -->
@@ -231,14 +307,20 @@
                         </ul> <!-- Termine les caractéristiques. -->
 
                         <p> <!-- Regroupe les liens de l’annonce. -->
-                            <a href="tel:+50944643903">Appeler</a> <!-- Reprend le numéro de contact fourni dans ton HTML. -->
-                            <a href="https://wa.me/50944643903?text=Bonjour%2C%20je%20vous%20contacte%20pour%20le%20studio%20%C3%A0%20Delmas.">WhatsApp</a> <!-- Prépare un message concernant le studio. -->
-                            <a href="https://www.openstreetmap.org/search?query=Delmas%2060%2C%20Haiti" target="_blank" rel="noopener">Voir sur la carte</a> <!-- Recherche le quartier dans un nouvel onglet. -->
+                            <a href="tel:+50944643903">Appeler</a>
+                            <!-- Reprend le numéro de contact fourni dans ton HTML. -->
+                            <a
+                                href="https://wa.me/50944643903?text=Bonjour%2C%20je%20vous%20contacte%20pour%20le%20studio%20%C3%A0%20Delmas.">WhatsApp</a>
+                            <!-- Prépare un message concernant le studio. -->
+                            <a href="https://www.openstreetmap.org/search?query=Delmas%2060%2C%20Haiti" target="_blank"
+                                rel="noopener">Voir sur la carte</a>
+                            <!-- Recherche le quartier dans un nouvel onglet. -->
                         </p> <!-- Termine les liens. -->
 
                         <details> <!-- Permet d’afficher les détails du studio. -->
                             <summary>Détails</summary> <!-- Sert de commande d’ouverture. -->
-                            <p>Studio calme au premier étage. Disponibilité à reconfirmer.</p> <!-- Décrit le studio. -->
+                            <p>Studio calme au premier étage. Disponibilité à reconfirmer.</p>
+                            <!-- Décrit le studio. -->
                             <dl> <!-- Associe les caractéristiques à leurs valeurs. -->
                                 <dt>Caution</dt> <!-- Introduit la caution. -->
                                 <dd>2 mois de loyer</dd> <!-- Précise la caution demandée. -->
@@ -253,30 +335,42 @@
 
             </ul> <!-- Termine la liste des logements. -->
 
-            <section id="aucun-resultat" aria-labelledby="titre-vide" hidden> <!-- Prépare un message masqué que JavaScript affichera si nécessaire. -->
+            <section id="aucun-resultat" aria-labelledby="titre-vide" hidden>
+                <!-- Prépare un message masqué que JavaScript affichera si nécessaire. -->
                 <h3 id="titre-vide">Aucun logement ne correspond.</h3> <!-- Indique l’absence de résultat. -->
-                <p>Essayez d’augmenter le budget, de changer de zone ou de retirer un filtre.</p> <!-- Propose des ajustements de recherche. -->
-                <button type="button" id="bouton-effacer">Effacer les filtres</button> <!-- Prépare la remise à zéro des critères avec JavaScript. -->
+                <p>Essayez d’augmenter le budget, de changer de zone ou de retirer un filtre.</p>
+                <!-- Propose des ajustements de recherche. -->
+                <button type="button" id="bouton-effacer">Effacer les filtres</button>
+                <!-- Prépare la remise à zéro des critères avec JavaScript. -->
             </section> <!-- Termine le message d’absence de résultat. -->
         </section> <!-- Termine la section des résultats. -->
 
         <aside id="securite" aria-labelledby="titre-securite"> <!-- Présente les conseils complémentaires. -->
             <h2 id="titre-securite">Ne payez jamais avant d’avoir visité</h2> <!-- Affiche le titre des conseils. -->
             <ol> <!-- Présente les conseils sous forme de liste numérotée. -->
-                <li>Visitez toujours le logement en journée, avec une personne de confiance.</li> <!-- Conseille une visite accompagnée. -->
-                <li>Vérifiez que la personne est bien le propriétaire ou son représentant.</li> <!-- Conseille de vérifier l’identité du contact. -->
-                <li>Demandez un reçu écrit pour tout paiement et un contrat de location.</li> <!-- Conseille de conserver des preuves écrites. -->
-                <li>Méfiez-vous des prix trop bas et des demandes d’argent urgentes.</li> <!-- Signale des situations suspectes. -->
-                <li>N’envoyez pas d’argent à quelqu’un que vous n’avez pas rencontré.</li> <!-- Rappelle une précaution avant paiement. -->
+                <li>Visitez toujours le logement en journée, avec une personne de confiance.</li>
+                <!-- Conseille une visite accompagnée. -->
+                <li>Vérifiez que la personne est bien le propriétaire ou son représentant.</li>
+                <!-- Conseille de vérifier l’identité du contact. -->
+                <li>Demandez un reçu écrit pour tout paiement et un contrat de location.</li>
+                <!-- Conseille de conserver des preuves écrites. -->
+                <li>Méfiez-vous des prix trop bas et des demandes d’argent urgentes.</li>
+                <!-- Signale des situations suspectes. -->
+                <li>N’envoyez pas d’argent à quelqu’un que vous n’avez pas rencontré.</li>
+                <!-- Rappelle une précaution avant paiement. -->
             </ol> <!-- Termine la liste des conseils. -->
         </aside> <!-- Termine la section de conseils. -->
 
-        <section id="proposer" aria-labelledby="titre-proposer"> <!-- Regroupe les éléments permettant de proposer une annonce. -->
+        <section id="proposer" aria-labelledby="titre-proposer">
+            <!-- Regroupe les éléments permettant de proposer une annonce. -->
             <h2 id="titre-proposer">Proposer un logement</h2> <!-- Affiche le titre de la section. -->
-            <p>Vous êtes propriétaire ou relais ? Renseignez le logement pour préparer un message à transmettre à l’équipe.</p> <!-- Explique l’objectif du formulaire. -->
-            <p>Les champs marqués d’un astérisque (*) sont obligatoires.</p> <!-- Explique le symbole utilisé dans les libellés. -->
+            <p>Vous êtes propriétaire ou relais ? Renseignez le logement pour préparer un message à transmettre à
+                l’équipe.</p> <!-- Explique l’objectif du formulaire. -->
+            <p>Les champs marqués d’un astérisque (*) sont obligatoires.</p>
+            <!-- Explique le symbole utilisé dans les libellés. -->
 
-            <form id="form-proposer" action="#proposer" method="post"> <!-- Identifie le formulaire dont JavaScript devra intercepter la soumission. -->
+            <form id="form-proposer" action="#proposer" method="post">
+                <!-- Identifie le formulaire dont JavaScript devra intercepter la soumission. -->
                 <p> <!-- Regroupe les éléments du type de logement. -->
                     <label for="p-type">Type de logement *</label><br> <!-- Décrit le champ obligatoire. -->
                     <select id="p-type" name="type" required> <!-- Demande le type de logement. -->
@@ -284,7 +378,8 @@
                         <option value="chambre">Chambre</option> <!-- Propose une chambre. -->
                         <option value="studio">Studio</option> <!-- Propose un studio. -->
                         <option value="maison">Maison</option> <!-- Propose une maison. -->
-                        <option value="hebergement">Hébergement temporaire</option> <!-- Propose un hébergement temporaire. -->
+                        <option value="hebergement">Hébergement temporaire</option>
+                        <!-- Propose un hébergement temporaire. -->
                     </select> <!-- Termine les types de logement. -->
                 </p> <!-- Termine le groupe du type. -->
 
@@ -296,22 +391,28 @@
                         <option value="Pétion-Ville">Pétion-Ville</option> <!-- Propose Pétion-Ville. -->
                         <option value="Tabarre">Tabarre</option> <!-- Propose Tabarre. -->
                         <option value="Carrefour">Carrefour</option> <!-- Propose Carrefour. -->
-                        <option value="Croix-des-Bouquets">Croix-des-Bouquets</option> <!-- Propose Croix-des-Bouquets. -->
+                        <option value="Croix-des-Bouquets">Croix-des-Bouquets</option>
+                        <!-- Propose Croix-des-Bouquets. -->
                         <option value="Cap-Haïtien">Cap-Haïtien</option> <!-- Propose Cap-Haïtien. -->
                         <option value="Les Cayes">Les Cayes</option> <!-- Propose Les Cayes. -->
                         <option value="Hinche">Hinche</option> <!-- Propose Hinche. -->
-                        <option value="Autre zone">Autre zone</option> <!-- Permet de proposer une autre localisation. -->
+                        <option value="Autre zone">Autre zone</option>
+                        <!-- Permet de proposer une autre localisation. -->
                     </select> <!-- Termine les zones. -->
                 </p> <!-- Termine le groupe de la zone. -->
 
                 <p> <!-- Regroupe les éléments de l’adresse. -->
-                    <label for="p-lieu">Quartier ou adresse approximative *</label><br> <!-- Demande une précision sur la localisation. -->
-                    <input type="text" id="p-lieu" name="lieu" maxlength="150" placeholder="Ex. : Delmas 33, près de l’église" required> <!-- Accepte une adresse de 150 caractères maximum. -->
+                    <label for="p-lieu">Quartier ou adresse approximative *</label><br>
+                    <!-- Demande une précision sur la localisation. -->
+                    <input type="text" id="p-lieu" name="lieu" maxlength="150"
+                        placeholder="Ex. : Delmas 33, près de l’église" required>
+                    <!-- Accepte une adresse de 150 caractères maximum. -->
                 </p> <!-- Termine le groupe de l’adresse. -->
 
                 <p> <!-- Regroupe les éléments du prix. -->
                     <label for="p-prix">Prix demandé *</label><br> <!-- Décrit le montant obligatoire. -->
-                    <input type="number" id="p-prix" name="prix" min="0" step="0.01" required> <!-- Accepte un montant positif ou nul avec des centimes. -->
+                    <input type="number" id="p-prix" name="prix" min="0" step="0.01" required>
+                    <!-- Accepte un montant positif ou nul avec des centimes. -->
                 </p> <!-- Termine le groupe du prix. -->
 
                 <p> <!-- Regroupe les éléments de la devise. -->
@@ -323,7 +424,8 @@
                 </p> <!-- Termine le groupe de la devise. -->
 
                 <p> <!-- Regroupe les éléments de la période. -->
-                    <label for="p-periode">Période du prix</label><br> <!-- Demande la période couverte par le montant. -->
+                    <label for="p-periode">Période du prix</label><br>
+                    <!-- Demande la période couverte par le montant. -->
                     <select id="p-periode" name="periode"> <!-- Permet de choisir la période de location. -->
                         <option value="mois">Par mois</option> <!-- Indique un tarif mensuel. -->
                         <option value="semaine">Par semaine</option> <!-- Indique un tarif hebdomadaire. -->
@@ -332,7 +434,8 @@
                 </p> <!-- Termine le groupe de la période. -->
 
                 <p> <!-- Regroupe les éléments de la caution. -->
-                    <label for="p-caution">Caution demandée en mois de loyer</label><br> <!-- Précise l’unité de la caution. -->
+                    <label for="p-caution">Caution demandée en mois de loyer</label><br>
+                    <!-- Précise l’unité de la caution. -->
                     <select id="p-caution" name="caution"> <!-- Propose les niveaux de caution. -->
                         <option value="0">Aucune</option> <!-- Indique l’absence de caution. -->
                         <option value="1">1 mois</option> <!-- Indique un mois de caution. -->
@@ -342,16 +445,21 @@
                 </p> <!-- Termine le groupe de la caution. -->
 
                 <p> <!-- Regroupe les éléments du nombre de pièces. -->
-                    <label for="p-pieces">Nombre de pièces *</label><br> <!-- Décrit le nombre de pièces obligatoire. -->
-                    <input type="number" id="p-pieces" name="pieces" min="1" step="1" value="1" required> <!-- Demande un nombre entier supérieur ou égal à 1. -->
+                    <label for="p-pieces">Nombre de pièces *</label><br>
+                    <!-- Décrit le nombre de pièces obligatoire. -->
+                    <input type="number" id="p-pieces" name="pieces" min="1" step="1" value="1" required>
+                    <!-- Demande un nombre entier supérieur ou égal à 1. -->
                 </p> <!-- Termine le groupe du nombre de pièces. -->
 
                 <p> <!-- Regroupe les éléments de la capacité. -->
-                    <label for="p-max">Nombre maximum de personnes *</label><br> <!-- Décrit la capacité obligatoire. -->
-                    <input type="number" id="p-max" name="max" min="1" step="1" value="2" required> <!-- Demande une capacité entière supérieure ou égale à 1. -->
+                    <label for="p-max">Nombre maximum de personnes *</label><br>
+                    <!-- Décrit la capacité obligatoire. -->
+                    <input type="number" id="p-max" name="max" min="1" step="1" value="2" required>
+                    <!-- Demande une capacité entière supérieure ou égale à 1. -->
                 </p> <!-- Termine le groupe de la capacité. -->
 
-                <p><label><input type="checkbox" id="p-eau" name="eau"> Eau sur place</label></p> <!-- Permet de signaler la disponibilité de l’eau. -->
+                <p><label><input type="checkbox" id="p-eau" name="eau"> Eau sur place</label></p>
+                <!-- Permet de signaler la disponibilité de l’eau. -->
 
                 <p> <!-- Regroupe les éléments de l’électricité. -->
                     <label for="p-elec">Électricité</label><br> <!-- Décrit la liste des sources d’électricité. -->
@@ -373,31 +481,43 @@
 
                 <p> <!-- Regroupe les éléments de la description. -->
                     <label for="p-desc">Description courte</label><br> <!-- Décrit la zone de texte. -->
-                    <textarea id="p-desc" name="description" rows="3" maxlength="500" placeholder="Décrivez le logement en quelques phrases."></textarea> <!-- Accepte une description de 500 caractères maximum. -->
+                    <textarea id="p-desc" name="description" rows="3" maxlength="500"
+                        placeholder="Décrivez le logement en quelques phrases."></textarea>
+                    <!-- Accepte une description de 500 caractères maximum. -->
                 </p> <!-- Termine le groupe de la description. -->
 
                 <p> <!-- Regroupe les éléments du nom. -->
-                    <label for="p-nom">Nom du propriétaire ou du relais *</label><br> <!-- Demande le nom de la personne à contacter. -->
-                    <input type="text" id="p-nom" name="nom" autocomplete="name" maxlength="100" required> <!-- Autorise le navigateur à proposer un nom déjà enregistré. -->
+                    <label for="p-nom">Nom du propriétaire ou du relais *</label><br>
+                    <!-- Demande le nom de la personne à contacter. -->
+                    <input type="text" id="p-nom" name="nom" autocomplete="name" maxlength="100" required>
+                    <!-- Autorise le navigateur à proposer un nom déjà enregistré. -->
                 </p> <!-- Termine le groupe du nom. -->
 
                 <p> <!-- Regroupe les éléments du téléphone. -->
                     <label for="p-tel">Téléphone *</label><br> <!-- Décrit le numéro obligatoire. -->
-                    <input type="tel" id="p-tel" name="telephone" autocomplete="tel" placeholder="+509 …" required> <!-- Facilite la saisie d’un téléphone sans vérifier à lui seul son format. -->
+                    <input type="tel" id="p-tel" name="telephone" autocomplete="tel" placeholder="+509 …" required>
+                    <!-- Facilite la saisie d’un téléphone sans vérifier à lui seul son format. -->
                 </p> <!-- Termine le groupe du téléphone. -->
 
-                <p><label><input type="checkbox" id="p-accord" name="accord" required> J’ai l’accord du propriétaire pour publier ce numéro. *</label></p> <!-- Exige que l’utilisateur confirme cet accord. -->
-                <p id="erreur-proposition" role="alert"></p> <!-- Réserve un emplacement pour les erreurs ajoutées par JavaScript. -->
-                <p><button type="submit" id="bouton-preparer">Préparer le message</button></p> <!-- Déclenche la validation puis la préparation du message avec JavaScript. -->
+                <p><label><input type="checkbox" id="p-accord" name="accord" required> J’ai l’accord du propriétaire
+                        pour publier ce numéro. *</label></p> <!-- Exige que l’utilisateur confirme cet accord. -->
+                <p id="erreur-proposition" role="alert"></p>
+                <!-- Réserve un emplacement pour les erreurs ajoutées par JavaScript. -->
+                <p><button type="submit" id="bouton-preparer">Préparer le message</button></p>
+                <!-- Déclenche la validation puis la préparation du message avec JavaScript. -->
             </form> <!-- Termine le formulaire de proposition. -->
 
-            <section id="apercu-message" aria-labelledby="titre-message" hidden> <!-- Prépare une zone masquée pour afficher le message produit. -->
+            <section id="apercu-message" aria-labelledby="titre-message" hidden>
+                <!-- Prépare une zone masquée pour afficher le message produit. -->
                 <h3 id="titre-message">Message pour l’équipe</h3> <!-- Donne un titre à l’aperçu. -->
                 <label for="message">Message préparé</label><br> <!-- Identifie la zone contenant le message. -->
-                <textarea id="message" rows="9" readonly></textarea> <!-- Affichera le message sans permettre de le modifier directement. -->
+                <textarea id="message" rows="9" readonly></textarea>
+                <!-- Affichera le message sans permettre de le modifier directement. -->
                 <p> <!-- Regroupe les actions disponibles sur le message. -->
-                    <a id="lien-whatsapp" aria-disabled="true">Ouvrir WhatsApp</a> <!-- JavaScript ajoutera le lien lorsque le numéro de l’équipe sera renseigné. -->
-                    <button type="button" id="bouton-copier">Copier</button> <!-- Prépare la copie du message avec JavaScript. -->
+                    <a id="lien-whatsapp" aria-disabled="true">Ouvrir WhatsApp</a>
+                    <!-- JavaScript ajoutera le lien lorsque le numéro de l’équipe sera renseigné. -->
+                    <button type="button" id="bouton-copier">Copier</button>
+                    <!-- Prépare la copie du message avec JavaScript. -->
                 </p> <!-- Termine les actions sur le message. -->
                 <p id="statut-copie" role="status"></p> <!-- Permettra de confirmer que le message a été copié. -->
             </section> <!-- Termine l’aperçu du message. -->
@@ -406,8 +526,10 @@
     </main> <!-- Termine le contenu principal. -->
 
     <footer> <!-- Affiche les informations de fin de page. -->
-        <p>Chèche Kay, prototype du groupe. Il ne remplace ni une visite ni un contrat de location.</p> <!-- Présente le statut du projet. -->
+        <p>Chèche Kay, prototype du groupe. Il ne remplace ni une visite ni un contrat de location.</p>
+        <!-- Présente le statut du projet. -->
     </footer> <!-- Termine le pied de page. -->
 
 </body> <!-- Termine le contenu visible. -->
+
 </html> <!-- Termine le document HTML. -->

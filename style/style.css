@@ -1,0 +1,232 @@
+/* ============ STYLES GÉNÉRAUX ============ */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f5f7;
+  color: #333333;
+}
+
+/* Alignement principal et largeur de la page */
+header, main, footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============ DÉGRADÉS ET COULEURS CHROME ============ */
+/* Style Chrome clair pour les cartes et sections */
+.chrome-box {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 50%, #e0e0e0 100%);
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Style Chrome foncé pour l'en-tête et les boutons */
+.chrome-dark {
+  background: linear-gradient(180deg, #555555 0%, #333333 50%, #111111 100%);
+  color: #ffffff;
+  border: 1px solid #666666;
+}
+
+/* ============ EN-TÊTE (HEADER) ============ */
+header {
+  background: linear-gradient(180deg, #ececec 0%, #ffffff 40%, #dcdcdc 100%);
+  border-bottom: 3px solid #b0b0b0;
+  margin-bottom: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111111;
+  margin-top: 0;
+}
+
+header h1 img {
+  height: 40px;
+  border-radius: 4px;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 8px 15px;
+  background: linear-gradient(180deg, #ffffff 0%, #e6e6e6 100%);
+  color: #222222;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #b5b5b5;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background: linear-gradient(180deg, #e6e6e6 0%, #cccccc 100%);
+  color: #000000;
+}
+
+/* Choix de langue et devise (Fieldsets) */
+fieldset {
+  border: 1px solid #b3b3b3;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+  padding: 10px 15px;
+}
+
+legend {
+  font-weight: bold;
+  color: #444444;
+  padding: 0 5px;
+}
+
+/* ============ FORMULAIRES & BOUTONS ============ */
+section, aside {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 50%, #eaeaea 100%);
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+h2, h3 {
+  color: #222222;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 5px;
+}
+
+/* Champs de saisie et sélecteurs */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #666666;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style général des boutons (effet métallique) */
+button, input[type="submit"] {
+  background: linear-gradient(180deg, #ffffff 0%, #d8d8d8 50%, #b8b8b8 100%);
+  color: #222222;
+  border: 1px solid #888888;
+  padding: 9px 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: linear-gradient(180deg, #eeeeee 0%, #c4c4c4 50%, #a3a3a3 100%);
+}
+
+button[type="submit"] {
+  background: linear-gradient(180deg, #666666 0%, #444444 50%, #222222 100%);
+  color: #ffffff;
+  border-color: #111111;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(180deg, #555555 0%, #333333 50%, #111111 100%);
+}
+
+/* ============ LISTE DE LOGEMENTS (CARTES) ============ */
+#resultats ul {
+  list-style: none;
+  padding: 0;
+}
+
+#resultats article {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  border: 1px solid #b5b5b5;
+  border-left: 5px solid #777777; /* Accent chromé sur le côté */
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#resultats article header {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#resultats article h3 {
+  margin-top: 0;
+  border: none;
+}
+
+/* Liens d'action (Appeler, WhatsApp, Carte) */
+#resultats article a {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-right: 8px;
+  margin-top: 5px;
+  background: #e4e4e4;
+  color: #222222;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid #b0b0b0;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+#resultats article a:hover {
+  background: #cccccc;
+}
+
+/* Accordéon Détails */
+details {
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #444444;
+}
+
+/* ============ BAS DE PAGE (FOOTER) ============ */
+footer {
+  background: linear-gradient(180deg, #e6e6e6 0%, #ffffff 50%, #cccccc 100%);
+  border-top: 2px solid #b3b3b3;
+  border-bottom: 2px solid #999999;
+  color: #222222;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 6px;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08);
+}
